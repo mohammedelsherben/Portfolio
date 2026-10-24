@@ -57,8 +57,8 @@ const projects = [
       en: "A bilingual (Arabic & English) personal site that showcases my work, built with HTML, CSS and JavaScript and hosted on Vercel.",
     },
     image: "",
-    code: "", // ضع رابط GitHub هنا بعد رفع المشروع
-    live: "", // ضع رابط Vercel هنا بعد النشر
+    code: "https://github.com/mohammedelsherben/Portfolio",
+    live: "https://portfolio-mohammedelsherben.vercel.app",
   },
 ];
 
