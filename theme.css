@@ -1,0 +1,57 @@
+/* ==========================================================
+   الهوية البصرية / Visual identity
+   غيّر الألوان والخطوط من هنا فقط، وكل الموقع يتغير معها.
+   Change colors and fonts here only; the whole site follows.
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap");
+
+:root {
+  /* الألوان / Colors */
+  --bg: #F7F7FB;
+  --surface: #FFFFFF;
+  --text: #1E1B4B;
+  --text-muted: #6B7280;
+  --primary: #6D5DFC;
+  --secondary: #22D3EE;
+  --accent: #F472B6;       /* يُستخدم بقلة / use sparingly */
+  --link: #5B4AE8;         /* نسخة أغمق من الأساسي للنصوص الصغيرة */
+  --gradient: linear-gradient(135deg, #6D5DFC, #22D3EE);
+
+  /* مشتقات / Derived */
+  --border: rgba(109, 93, 252, 0.16);
+  --shadow: 0 10px 30px rgba(30, 27, 75, 0.08);
+  --glow: 0 14px 36px rgba(109, 93, 252, 0.32);
+  --nav-bg: rgba(247, 247, 251, 0.8);
+  --orb-opacity: 0.5;
+
+  /* الخطوط / Fonts */
+  --font-en-heading: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-en-body: "Inter", system-ui, sans-serif;
+  --font-ar: "IBM Plex Sans Arabic", "Cairo", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+/* الوضع الليلي / Dark mode (navy, not black) */
+[data-theme="dark"] {
+  --bg: #0E1330;
+  --surface: #171D45;
+  --text: #E8E9FF;
+  --text-muted: #9AA1C7;
+  --link: #A99FFF;
+  --border: rgba(138, 125, 255, 0.24);
+  --shadow: 0 10px 30px rgba(6, 9, 30, 0.4);
+  --glow: 0 14px 36px rgba(109, 93, 252, 0.45);
+  --nav-bg: rgba(14, 19, 48, 0.8);
+  --orb-opacity: 0.32;
+}
+
+/* الخط حسب اللغة / Font by language */
+html[lang="ar"] {
+  --font-body: var(--font-ar);
+  --font-heading: var(--font-ar);
+}
+html[lang="en"] {
+  --font-body: var(--font-en-body);
+  --font-heading: var(--font-en-heading);
+}

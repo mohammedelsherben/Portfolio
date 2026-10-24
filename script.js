@@ -106,7 +106,58 @@ function render() {
         </article>`;
     })
     .join("");
+
+  animateHero();
 }
+
+// ===== الحركة / Motion =====
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let heroRun = 0;
+
+// يظهر الاسم كلمة كلمة، ويُكتب المسمى الوظيفي كأنه في تيرمينال
+// The name appears word by word, and the role types out like a terminal
+function animateHero() {
+  const run = ++heroRun;
+
+  const h1 = document.querySelector(".hero h1");
+  const name = h1.textContent;
+  const words = name.trim().split(/\s+/);
+  h1.setAttribute("aria-label", name);
+  h1.innerHTML = words
+    .map((w, i) => `<span class="word" style="--i:${i}" aria-hidden="true">${w}</span>`)
+    .join(" ");
+
+  const role = document.querySelector(".hero .role");
+  const full = role.textContent;
+  role.setAttribute("aria-label", full);
+  if (reduceMotion) return;
+
+  role.textContent = "";
+  let n = 0;
+  const step = () => {
+    if (run !== heroRun) return;
+    n += 1;
+    role.textContent = full.slice(0, n);
+    if (n < full.length) setTimeout(step, 45);
+  };
+  setTimeout(step, words.length * 130 + 500);
+}
+
+// ===== الوضع الليلي / Dark mode =====
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+function applyTheme(dark) {
+  document.documentElement.dataset.theme = dark ? "dark" : "light";
+  themeMeta.content = dark ? "#0E1330" : "#F7F7FB";
+}
+applyTheme(document.documentElement.dataset.theme === "dark");
+
+document.getElementById("theme-btn").addEventListener("click", () => {
+  const dark = document.documentElement.dataset.theme !== "dark";
+  applyTheme(dark);
+  try {
+    localStorage.setItem("theme", dark ? "dark" : "light");
+  } catch {}
+});
 
 document.getElementById("lang-btn").addEventListener("click", () => {
   lang = lang === "ar" ? "en" : "ar";
