@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <meta name="description" content="Personal portfolio">
+  <meta name="theme-color" content="#0e100e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#home">~/<span data-i18n="logo"></span></a>
+    <nav>
+      <a href="#about" data-i18n="nav_about"></a>
+      <a href="#skills" data-i18n="nav_skills"></a>
+      <a href="#projects" data-i18n="nav_projects"></a>
+      <a href="#contact" data-i18n="nav_contact"></a>
+    </nav>
+    <button id="lang-btn" class="lang-btn" type="button" aria-label="Change language">EN</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <p class="hello" data-i18n="hero_hello"></p>
+      <h1 data-i18n="hero_name"></h1>
+      <p class="role" data-i18n="hero_role"></p>
+      <a class="btn" href="#projects"><span data-i18n="hero_btn"></span> ↓</a>
+    </section>
+
+    <section id="about" class="reveal">
+      <h2><span class="num">01</span><span data-i18n="about_title"></span></h2>
+      <div class="about">
+        <img class="photo" src="images/profile.jpg" alt="Mohammed Hossam">
+        <p data-i18n="about_text"></p>
+      </div>
+    </section>
+
+    <section id="skills" class="reveal">
+      <h2><span class="num">02</span><span data-i18n="skills_title"></span></h2>
+      <ul class="skills" id="skills-list"></ul>
+    </section>
+
+    <section id="projects" class="reveal">
+      <h2><span class="num">03</span><span data-i18n="projects_title"></span></h2>
+      <div class="projects" id="projects-grid"></div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h2><span class="num">04</span><span data-i18n="contact_title"></span></h2>
+      <p class="contact-text" data-i18n="contact_text"></p>
+      <ul class="links">
+        <li><a href="mailto:mohammedelsherbeny506@gmail.com"><span>Email</span><span class="arrow">↗</span></a></li>
+        <li><a href="https://github.com/mohammedelsherben" target="_blank" rel="noopener"><span>GitHub</span><span class="arrow">↗</span></a></li>
+        <li><a href="https://www.linkedin.com/in/mohammed-hossam-311a89439" target="_blank" rel="noopener"><span>LinkedIn</span><span class="arrow">↗</span></a></li>
+        <li><a href="https://wa.me/201016709832" target="_blank" rel="noopener"><span>WhatsApp</span><span class="arrow">↗</span></a></li>
+        <li><a href="https://www.facebook.com/share/1FWx9S9cjT/" target="_blank" rel="noopener"><span>Facebook</span><span class="arrow">↗</span></a></li>
+        <li><a href="https://www.instagram.com/mody_sherpoo" target="_blank" rel="noopener"><span>Instagram</span><span class="arrow">↗</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p data-i18n="footer"></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
