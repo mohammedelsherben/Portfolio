@@ -60,6 +60,16 @@ const projects = [
     code: "https://github.com/mohammedelsherben/Portfolio",
     live: "https://portfolio-mohammedelsherben.vercel.app",
   },
+  {
+    title: { ar: "IRON HOUSE FITNESS: موقع نادي رياضي", en: "IRON HOUSE FITNESS: Gym Website" },
+    desc: {
+      ar: "موقع نادي رياضي متميز بلغتين (عربي وإنجليزي) مع لوحة تحكم تجريبية لإدارة الاشتراكات. بيانات تجريبية بالكامل، مبني بـ HTML وCSS وJavaScript.",
+      en: "A premium bilingual (Arabic & English) gym website with a demo membership-management dashboard. All data is fictional; built with HTML, CSS and JavaScript.",
+    },
+    image: "",
+    code: "https://github.com/mohammedelsherben/iron-house-fitness",
+    live: "https://iron-house-fitness.vercel.app",
+  },
 ];
 
 // ===== الكود / Code =====
