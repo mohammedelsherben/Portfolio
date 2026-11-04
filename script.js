@@ -70,6 +70,16 @@ const projects = [
     code: "https://github.com/mohammedelsherben/iron-house-fitness",
     live: "https://iron-house-fitness.vercel.app",
   },
+  {
+    title: { ar: "co/mohammed: منصة تدريب وتغذية أونلاين", en: "co/mohammed: Online Coaching Platform" },
+    desc: {
+      ar: "منصة كاملة للتدريب والتغذية بالعربية: تسجيل ودخول، باقات اشتراك، أنظمة غذائية بالسعرات والماكروز، سجل تمارين وأوزان، ولوحة تحكم للمدرب. مبنية بـ Next.js وPostgreSQL مع تشفير للبيانات الحساسة.",
+      en: "A full Arabic online coaching platform: sign-up and login, subscription plans, diet plans with calories and macros, workout and weight logging, and a coach dashboard. Built with Next.js and PostgreSQL with encryption for sensitive data.",
+    },
+    image: "",
+    code: "",
+    live: "https://co-mohammed-mohammedelsherben.vercel.app",
+  },
 ];
 
 // ===== الكود / Code =====
