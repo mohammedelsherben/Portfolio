@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="progress" aria-hidden="true"></div>
   <div class="hero-bg" aria-hidden="true">
     <span class="orb o1"></span>
     <span class="orb o2"></span>
@@ -30,6 +31,7 @@
     <nav>
       <a href="#about" data-i18n="nav_about"></a>
       <a href="#skills" data-i18n="nav_skills"></a>
+      <a href="#services" data-i18n="nav_services"></a>
       <a href="#projects" data-i18n="nav_projects"></a>
       <a href="#contact" data-i18n="nav_contact"></a>
     </nav>
@@ -65,13 +67,31 @@
       <ul class="skills" id="skills-list"></ul>
     </section>
 
+    <section id="services" class="reveal">
+      <h2><span class="num">03</span><span data-i18n="services_title"></span></h2>
+      <div class="services" id="services-grid"></div>
+    </section>
+
+    <section id="demo" class="reveal">
+      <h2 id="demo-heading"><span class="num">04</span><span data-i18n="demo_title"></span></h2>
+      <p class="demo-note" data-i18n="demo_note"></p>
+      <div class="demo-pick">
+        <span data-i18n="demo_pick"></span>
+        <div class="chips" id="demo-chips"></div>
+      </div>
+      <div class="demo-win" role="group" aria-labelledby="demo-heading">
+        <div class="demo-bar" aria-hidden="true"><i></i><i></i><i></i><span class="demo-title">agent.chat</span></div>
+        <div class="demo-log" id="demo-log" aria-live="off"></div>
+      </div>
+    </section>
+
     <section id="projects" class="reveal">
-      <h2><span class="num">03</span><span data-i18n="projects_title"></span></h2>
+      <h2><span class="num">05</span><span data-i18n="projects_title"></span></h2>
       <div class="projects" id="projects-grid"></div>
     </section>
 
     <section id="contact" class="reveal">
-      <h2><span class="num">04</span><span data-i18n="contact_title"></span></h2>
+      <h2><span class="num">06</span><span data-i18n="contact_title"></span></h2>
       <p class="contact-text" data-i18n="contact_text"></p>
       <ul class="links">
         <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mohammedelsherbeny506@gmail.com" target="_blank" rel="noopener"><span>Email</span><span class="arrow">↗</span></a></li>
@@ -89,5 +109,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="motion.js"></script>
 </body>
 </html>

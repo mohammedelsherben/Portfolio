@@ -1,11 +1,13 @@
 // ===== محتوى الموقع / Site content =====
 // عدّل النصوص هنا فقط. Edit the text here only.
+// الحركة والعرض التجريبي في motion.js. Motion and the demo live in motion.js.
 
 const texts = {
   ar: {
     logo: "محمد",
     nav_about: "نبذة عني",
     nav_skills: "المهارات",
+    nav_services: "الخدمات",
     nav_projects: "أعمالي",
     nav_contact: "تواصل معي",
     hero_hello: "مرحباً، أنا",
@@ -15,6 +17,12 @@ const texts = {
     about_title: "نبذة عني",
     about_text: "أنا محمد حسام، مطوّر مواقع، وأبني وكلاء ذكاء اصطناعي يساعدون في أتمتة المهام وتسهيل العمل. أدرس في السنة الثالثة بمودرن أكاديمي بالمعادي، تخصص إدارة الأعمال، وأجمع بين فهم الأعمال والبرمجة لأصنع حلولاً عملية تخدم احتياج الناس فعلاً.",
     skills_title: "المهارات",
+    services_title: "الخدمات",
+    demo_title: "شاهد وكيلاً ذكياً أثناء العمل",
+    demo_note: "محاكاة توضيحية لطريقة عمل الوكلاء، وليست وكيلاً حقيقياً متصلاً بخدمة.",
+    demo_pick: "اختر مثالاً:",
+    demo_you: "أنت",
+    demo_agent: "الوكيل",
     projects_title: "أعمالي",
     contact_title: "تواصل معي",
     contact_text: "عندك فكرة أو فرصة عمل؟ يسعدني أن أسمع منك.",
@@ -26,6 +34,7 @@ const texts = {
     logo: "Mohammed",
     nav_about: "About",
     nav_skills: "Skills",
+    nav_services: "Services",
     nav_projects: "Projects",
     nav_contact: "Contact",
     hero_hello: "Hi, I'm",
@@ -35,6 +44,12 @@ const texts = {
     about_title: "About me",
     about_text: "I'm Mohammed Hossam, a web developer who builds AI agents that automate tasks and make work easier. I'm a third-year Business Administration student at Modern Academy in Maadi, and I combine business understanding with programming to build practical solutions people actually need.",
     skills_title: "Skills",
+    services_title: "Services",
+    demo_title: "See an AI agent at work",
+    demo_note: "An illustrative simulation of how agents work, not a live agent connected to a service.",
+    demo_pick: "Pick an example:",
+    demo_you: "You",
+    demo_agent: "Agent",
     projects_title: "Projects",
     contact_title: "Get in touch",
     contact_text: "Have an idea or a job opportunity? I'd love to hear from you.",
@@ -45,6 +60,77 @@ const texts = {
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "AI Agents", "Git", "GitHub"];
+
+// الخدمات / Services. icon: أيقونة SVG بسيطة.
+const services = [
+  {
+    icon: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
+    title: { ar: "تصميم وتطوير المواقع", en: "Website design & development" },
+    desc: {
+      ar: "مواقع سريعة وأنيقة تعمل على كل الأجهزة، وتدعم العربية والإنجليزية.",
+      en: "Fast, polished websites that work on every device, in Arabic and English.",
+    },
+  },
+  {
+    icon: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 16h6"/></svg>',
+    title: { ar: "وكلاء الذكاء الاصطناعي", en: "AI agents" },
+    desc: {
+      ar: "وكلاء يجيبون عن الأسئلة وينفّذون المهام المتكررة بدلاً من أن تقوم بها يدوياً.",
+      en: "Agents that answer questions and handle repetitive tasks so you don't have to.",
+    },
+  },
+  {
+    icon: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V11M10 20V4M16 20v-7M22 20H2"/></svg>',
+    title: { ar: "حلول تناسب نشاطك", en: "Solutions that fit your business" },
+    desc: {
+      ar: "أبدأ بفهم احتياج العمل، ثم أبني الأداة المناسبة له بخلفيتي في إدارة الأعمال.",
+      en: "I start by understanding what your business needs, then build the right tool, drawing on my business administration background.",
+    },
+  },
+];
+
+// سيناريوهات العرض التجريبي / Demo scenarios (simulated, scripted)
+const scenarios = [
+  {
+    id: "booking",
+    label: { ar: "حجز موعد", en: "Book an appointment" },
+    user: { ar: "أريد حجز موعد غداً الساعة 5 مساءً", en: "I'd like to book an appointment tomorrow at 5 PM" },
+    steps: {
+      ar: ["فهم الطلب", "فحص المواعيد المتاحة", "تثبيت الحجز وإرسال التأكيد"],
+      en: ["Understanding the request", "Checking available slots", "Confirming the booking"],
+    },
+    reply: {
+      ar: "تم حجز موعدك غداً الساعة 5 مساءً. سأرسل لك تذكيراً قبل الموعد بساعة.",
+      en: "Your appointment is booked for tomorrow at 5 PM. I'll send you a reminder one hour before.",
+    },
+  },
+  {
+    id: "faq",
+    label: { ar: "سؤال عن الخدمات", en: "Ask about services" },
+    user: { ar: "ما الباقات المتاحة؟", en: "What plans are available?" },
+    steps: {
+      ar: ["فهم السؤال", "البحث في معلومات الخدمات", "تجهيز الرد"],
+      en: ["Understanding the question", "Searching the service info", "Preparing the reply"],
+    },
+    reply: {
+      ar: "عندنا باقتان: أساسية ومتقدمة. هل تريد أن أرسل لك مقارنة بينهما؟",
+      en: "We have two plans: Basic and Advanced. Want me to send you a comparison?",
+    },
+  },
+  {
+    id: "summary",
+    label: { ar: "تلخيص رسائل اليوم", en: "Summarize today's messages" },
+    user: { ar: "لخّص لي رسائل اليوم", en: "Summarize today's messages" },
+    steps: {
+      ar: ["قراءة الرسائل الواردة", "تصنيفها حسب النوع", "كتابة الملخص"],
+      en: ["Reading incoming messages", "Sorting them by type", "Writing the summary"],
+    },
+    reply: {
+      ar: "وصلتك 24 رسالة: 15 استفساراً و6 طلبات حجز و3 شكاوى تحتاج متابعة منك.",
+      en: "You received 24 messages: 15 questions, 6 booking requests, and 3 complaints that need your follow-up.",
+    },
+  },
+];
 
 // لإضافة مشروع جديد: انسخ كتلة { ... } وغيّر القيم.
 // To add a project: copy a { ... } block and change the values.
@@ -110,10 +196,21 @@ function render() {
     .map((s) => `<li>${s}</li>`)
     .join("");
 
+  document.getElementById("services-grid").innerHTML = services
+    .map(
+      (s) => `
+        <article class="service" data-tilt>
+          <span class="icon">${s.icon}</span>
+          <h3>${s.title[lang]}</h3>
+          <p>${s.desc[lang]}</p>
+        </article>`
+    )
+    .join("");
+
   document.getElementById("projects-grid").innerHTML = projects
     .map((p, i) => {
       return `
-        <article class="project">
+        <article class="project" data-tilt>
           <span class="idx">${String(i + 1).padStart(2, "0")}</span>
           <div>
             <h3>${p.title[lang]}</h3>
@@ -127,40 +224,7 @@ function render() {
     })
     .join("");
 
-  animateHero();
-}
-
-// ===== الحركة / Motion =====
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-let heroRun = 0;
-
-// يظهر الاسم كلمة كلمة، ويُكتب المسمى الوظيفي كأنه في تيرمينال
-// The name appears word by word, and the role types out like a terminal
-function animateHero() {
-  const run = ++heroRun;
-
-  const h1 = document.querySelector(".hero h1");
-  const name = h1.textContent;
-  const words = name.trim().split(/\s+/);
-  h1.setAttribute("aria-label", name);
-  h1.innerHTML = words
-    .map((w, i) => `<span class="word" style="--i:${i}" aria-hidden="true">${w}</span>`)
-    .join(" ");
-
-  const role = document.querySelector(".hero .role");
-  const full = role.textContent;
-  role.setAttribute("aria-label", full);
-  if (reduceMotion) return;
-
-  role.textContent = "";
-  let n = 0;
-  const step = () => {
-    if (run !== heroRun) return;
-    n += 1;
-    role.textContent = full.slice(0, n);
-    if (n < full.length) setTimeout(step, 45);
-  };
-  setTimeout(step, words.length * 130 + 500);
+  if (window.portfolioMotion) window.portfolioMotion.refresh();
 }
 
 // ===== الوضع الليلي / Dark mode =====
